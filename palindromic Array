@@ -1,0 +1,44 @@
+Given a Integer array A[] of n elements. Your task is to complete the function PalinArray. Which will return 1 if all the elements of the Array are palindrome otherwise it will return 0.
+Input:
+2//T
+5//n
+111 222 333 444 555//A
+3
+121 131 20
+Output:
+1
+0
+
+
+program-->
+
+import java.util.Scanner;
+class palindrome{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int T=sc.nextInt();
+        for(int i=0;i<T;i++){
+            int n=sc.nextInt();
+            int[] A=new int[n];
+            for(int k=0;k<n;k++){
+                A[k]=sc.nextInt();
+            }
+        int m=0,flag=0;
+        while(m<n){
+            String str=""+A[m];char ch[]=str.toCharArray();
+            int l=ch.length;
+            int left=0,right=l-1;
+            while(left<right){
+                if(ch[left]==ch[right]) flag=1;
+                else flag=0;
+                left++;right--;
+            }
+           m++;
+        }
+         if(flag==1) System.out.print("1");
+         else System.out.print("0");
+         System.out.println();
+
+        }
+    }
+}
