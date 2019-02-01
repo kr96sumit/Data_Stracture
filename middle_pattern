@@ -1,0 +1,41 @@
+Input: PROGRAM                            Input: RAT
+Output:                                   Output:
+            G                                       A
+          GR                                      AT  
+        GRA                                     ATR
+      GRAM
+    GRAMP
+  GRAMPR
+GRAMPRO
+
+
+program-->
+
+import java.util.*;
+class middle_pattern{
+    public static void main(String args[]) throws Exception{
+        Scanner sc=new Scanner(System.in);
+        int T=sc.nextInt();
+       
+        for(int i=0;i<T;i++){
+           String str=sc.next();
+           int n=str.length();
+           int middle=(n+1)/2;
+           char[] ch=str.toCharArray();
+           String s="";
+           for(int j=middle;j<=n;j++){
+                   s+=ch[j-1];
+                   System.out.print(s+"$");
+                   System.out.print(" ");
+           }
+           for(int k=0;k<middle-1;k++){
+               s+=ch[k];
+               System.out.print(s+"$");                   System.out.print(" ");
+
+           }
+            
+         System.out.println();
+    }
+    
+}
+}
