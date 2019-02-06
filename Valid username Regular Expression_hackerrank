@@ -1,0 +1,54 @@
+/*
+
+Regular Expression->
+regular expression is used to search pattern in data
+"^[a-zA-Z][a-zA-Z0-9_]{7,29}$"
+^  start of the expression   $ end of the expression
+[a-zA-Z]  first character is either small or big alphabet.
+[a-zA-Z0-9_]  other char is either small or big or numeric or underscore characters.
+[7,29]  length lie bw 7 and 29
+
+*/
+
+/*
+String.matches used to match the string with regular expression
+*/
+
+import java.util.*;
+class valid_username{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();//no of test-cases
+        for(int i=0;i<n;i++){
+        String s=sc.next();
+        if(s.matches("^[a-zA-Z][a-zA-Z0-9_]{7,29}$")){
+            System.out.println("Valid");
+        }
+        else{
+            System.out.println("Invalid");
+        }
+        }
+     }
+}
+
+
+
+
+//to match a pattern in an string-->
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+class valid_username{
+    public static void main(String args[]){
+       // Scanner sc=new Scanner(System.in);
+        String s="Hello World";
+        String r="[H|h]e[l]*o";//->can be either H or h  -->l can be any times occur.
+        Pattern p=Pattern.compile(r);
+        Matcher m=p.matcher(s);
+        while(m.find()){
+            System.out.println("found value"+" "+m.group());
+        }
+        
+     }
+}
