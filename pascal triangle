@@ -1,0 +1,31 @@
+//pascal triangle
+#include<bits/stdc++.h>
+using namespace std;
+int fact(int n){
+    //base case
+   if(n==0){
+       return 1;
+   }
+   n=n*fact(n-1);
+}
+int binomialCoeff(int n,int r);
+void printPascal(int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            
+            cout<<binomialCoeff(i,j)<<" ";
+        }
+        cout<<endl;
+    }
+}
+int binomialCoeff(int n,int r){
+    int res=fact(n)/(fact(n-r)*fact(r));
+    return res;
+}
+int main(){
+    
+    int n;
+    cin>>n;
+    printPascal(n);
+    return 0;
+}
