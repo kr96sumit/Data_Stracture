@@ -1,0 +1,37 @@
+// type inference
+#include<bits/stdc++.h>
+using namespace std;
+int fun(){
+    return 111;
+}
+int main(){
+    // auto makes slightly slow compilation .
+    auto x=4;
+    auto y=3.2;
+    auto ptr=&x;
+    cout<<typeid(x).name()<<endl;
+    cout<<typeid(y).name()<<endl;
+    cout<<typeid(ptr).name()<<endl;
+    /*
+    We have used typeid for getting the type of the variables. typeid is an operator which is used where dynamic type of an object need to be known. typeid(x).name() return shorthand name of the data type of x, for example, it return i for integers, d for doubles, Pi for the pointer to integer etc
+    
+    */
+    
+    
+    //set automatically sort internally and distinct element
+    set<string> s;
+    s.insert({"gupta","punit","sumit","gupta"});
+    for(auto i=s.begin();i!=s.end();i++){
+        cout<<*i<<" ";
+    }
+    cout<<endl<<endl;
+    
+    //decltype is sort of an operator that evaluates the type of passed expression.
+    decltype(fun()) xs;
+    cout<<typeid(xs).name()<<endl;
+    
+    
+        return 0;
+
+    
+}
