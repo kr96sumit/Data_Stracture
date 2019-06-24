@@ -1,0 +1,29 @@
+//pair is internally implemented in hashmap and map container's
+#include<bits/stdc++.h>
+#include<utility>
+using namespace std;
+int main(){
+    pair<int,char> p;
+    p.first=1;
+    p.second='s';
+    cout<<"p->first"<<p.first<<endl;
+    cout<<"p->second"<<p.second<<endl;
+    return 0;
+}
+//logical operator--
+#include<iostream>
+#include<utility>
+using namespace std;
+
+int main(){
+    pair<int,int> p1=make_pair(1,12);
+    pair<int,int> p2=make_pair(9,12);
+    cout<<(p1==p2)<<endl;
+    cout<<(p1!=p2)<<endl;
+    cout<<(p1>=p2)<<endl;
+    cout<<(p1<=p2)<<endl;
+    cout<<(p1>p2)<<endl;
+    cout<<(p1<p2)<<endl;
+    
+    return 0;
+}
