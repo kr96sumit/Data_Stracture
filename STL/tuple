@@ -25,6 +25,7 @@ int main(){
     cout<<get<2>(student)<<endl;
     
     //tuple size
+    //decltype is sort of an operator that evaluates the type of passed expression.
     cout<<"size  "<<tuple_size<decltype(student)>::value<<endl;
     
     //swap
