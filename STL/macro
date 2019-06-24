@@ -1,0 +1,9 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define increment_by1(x) cout<<#x<<" increment by 1 is "<<x+1<<endl;
+int main(){
+    int x=2;
+    increment_by1(x);
+    return 0;
+}
