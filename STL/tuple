@@ -1,0 +1,59 @@
+//  tuple
+// tuple is an object of different data-type elements
+
+#include<bits/stdc++.h>
+#include<tuple>   // for tuple
+using namespace std;
+int main(){
+    //declaration
+    tuple<int,string,string> student;
+    //assignment
+    student=make_tuple(1,"sumit","adgitm");
+    
+    // access tuple element ->get<index>(tuple_name)
+    cout<<get<0>(student)<<" ";
+    cout<<get<1>(student)<<" ";
+    cout<<get<2>(student)<<" "<<endl;
+    
+    // change value also by get -> 
+    get<1>(student)="puneet";
+    get<2>(student)="gbpant";
+    
+    //modified print
+    cout<<get<0>(student)<<" ";
+    cout<<get<1>(student)<<" ";
+    cout<<get<2>(student)<<endl;
+    
+    //tuple size
+    cout<<"size  "<<tuple_size<decltype(student)>::value<<endl;
+    
+    //swap
+    // tuple 2
+    tuple<int,string,string> s2;
+    s2=make_tuple(2,"preeti","patna_university");
+    student.swap(s2);
+    cout<<get<0>(student)<<" ";
+    cout<<get<1>(student)<<" ";
+    cout<<get<2>(student)<<endl<<endl;
+    
+    // tie() ->unpack tuple value in seperate variable'seperate
+   cout<<"split tuple in variable's"<<endl;
+    int a;
+    string str1;
+    string str2;
+    tie(a,str1,str2)=s2;
+    cout<<a<<" "<<str1<<" "<<str2<<endl;
+    
+    //   concatenation->
+    cout<<"concatenated tuple values "<<endl;
+    auto t=tuple_cat(student,s2);
+    cout<<get<0>(t)<<" ";
+    cout<<get<1>(t)<<" ";
+    cout<<get<2>(t)<<" ";
+    cout<<get<3>(t)<<" ";
+    cout<<get<4>(t)<<" ";
+    cout<<get<5>(t)<<endl;
+    
+    
+    return 0;
+}
