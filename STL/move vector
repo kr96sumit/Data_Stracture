@@ -1,0 +1,18 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+//move->used in vectors 
+//move content form one vector to another vector
+int main() {
+    vector<int> v1={1,2,3,4,5};
+    
+    cout<<"before move"<<endl;
+    for(auto i:v1) cout<<i<<" ";
+    cout<<endl;
+    vector<int> v2=move(v1);
+    cout<<"after move"<<endl;
+    for(auto i:v1) cout<<i<<" ";
+    cout<<endl;
+    for(auto i:v2) cout<<i<<" ";
+	return 0;
+}
