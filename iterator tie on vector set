@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+//macro defination ->process by compiler
+#define mt make_tuple
+#define eb emplace_blank
+
+//typedef->used to give data type a new name->process by preprocesser and end with semi-colon
+typedef tuple<int,int,int> t;
+
+int main(){
+    
+    t tt=mt(1,2,3);
+    int a,b;
+    
+    //  ignore used to igonre tuple values
+    tie(b,ignore,a)=tt;
+    cout<<a<<" "<<b<<endl;
+    
+    // set declaration and assignment
+    set<int> s={2,5,1,6,3};
+    
+    //  print using-iterator-complex
+    for(set<int>::iterator i=s.begin();i!=s.end();++i){
+        cout<<*i<<" ";
+    }
+    
+    cout<<endl;
+    
+    //  print using-auto
+    for(auto i:s){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    
+    //  to change value's in vector
+    vector<int> v={2,1,5,22};
+    for(auto &i:v){
+      i+=23;
+      cout<<i<<" ";
+    }
+    
+    
+    return 0;
+}
