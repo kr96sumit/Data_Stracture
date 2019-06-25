@@ -1,0 +1,25 @@
+// LCM of array's
+#include<bits/stdc++.h>
+using namespace std;
+int gcd(int a,int b){
+    if(a==0) return b;
+    return gcd(a%b,a);
+}
+auto lcm( auto *arr,auto n){
+    auto ll=arr[0];
+    for(int i=1;i<n;i++){
+         ll=(arr[i]*ll)/gcd(arr[i],ll);
+    }
+    return ll;
+}
+int main(){
+    int n;
+    cout<<"Enter size of array"<<endl;
+    cin>>n;
+    int arr[n];
+    for(auto i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<lcm(arr,n)<<endl;
+    return 0;
+}
