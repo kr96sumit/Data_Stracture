@@ -1,0 +1,26 @@
+// product of given N fractions in reduced form
+#include<bits/stdc++.h>
+using namespace std;
+int gcd(int a,int b){
+    if(a==0) 
+    return b;
+    return gcd(b%a,a);
+}
+int reduced_lcm(int n,int num[],int den[]){
+    int new_num=1,new_den=1;
+    for(int i=0;i<n;i++){
+        new_num*=num[i];
+        new_den*=den[i];
+    }
+    int gcdd=gcd(new_num,new_den);
+    new_num/=gcdd;
+    new_den/=gcdd;
+    cout<<new_num<<" "<<new_den<<endl;
+}
+int main(){
+    int n=3;
+    int num[]={1,2,5};
+    int den[]={2,1,6};
+    reduced_lcm(n,num,den);
+    return 0;
+}
