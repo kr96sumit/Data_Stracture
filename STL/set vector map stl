@@ -1,0 +1,110 @@
+#include<bits/stdc++.h>
+#include<vector>
+#include<set>
+#include<map>
+#include<algorithm>
+
+using namespace std;
+bool compare(int x,int y){
+    return x>y;
+}
+void setDemo(){
+        set<int> s;
+        //insert is O(logN)
+        s.insert(1);
+        s.insert(2);
+        s.insert(-1);
+        for(int x:s){
+            cout<<x<<" ";
+        }
+        cout<<endl;
+        auto it=s.find(-1);
+        if(it==s.end())
+        cout<<"not present\n";
+        else
+        cout<<"present"<<endl; 
+        
+        auto it2=s.upper_bound(-1);
+        auto it3=s.upper_bound(1);
+        cout<<*it2<<*it3<<endl;
+        
+        //if not found
+        auto it4=s.upper_bound(5);
+        if(it4==s.end())
+        cout<<"oops not found"<<endl;
+    }
+    void mapdemo(){
+        map<int,int> a;
+        a[1]=100;
+        a[2]=12;
+        a[3]=122;
+        
+    }
+int main()
+{
+    // c++ stl
+    vector<int> A={1,5,3,4,2};
+    cout<<A[1]<<endl;
+    
+    // sort in O(NlogN) time
+    sort(A.begin(),A.end());
+    //1,2,3,4,5
+    //O(NlogN)->binary search
+    bool present=binary_search(A.begin(),A.end(),3);//true
+    cout<<present;
+    
+    A.push_back(100);
+    present=binary_search(A.begin(),A.end(),100);
+    cout<<endl;
+    //1,2,3,4,5,100
+    //O(logN)
+    //first occurence which is greter than or equal to that
+    vector<int> :: iterator it=lower_bound(A.begin(),A.end(),100);//>=
+    //first occurence which is strictly greter than that.
+    vector<int> :: iterator it2=upper_bound(A.begin(),A.end(),100);//>
+    //count or occurence of element
+    cout<<it2-it<<endl;
+    
+    //reverse vector
+    sort(A.begin(),A.end(),compare);
+    //print vector
+    vector<int>:: iterator it3;
+    for(it3=A.begin();it3!=A.end();it3++){
+        cout<<*it3<<" ";
+    }
+    cout<<endl;
+    
+    //print using for each 
+    //&-> make changes at reference position.
+    for(int &i:A){
+        i++;
+    }
+    for(int x:A){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+    
+    //ascending order sequence of element in set
+    //each operation is O(logN time)
+    setDemo();
+    
+    cout<<*it<<" "<<*it2<<endl;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    return 0;
+}
