@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(){
+        data=0;
+        next=NULL;
+    }
+};
+class singly_ll{
+  public:
+  Node* head;
+  void insert(int data);
+  void print();
+  int count=0;
+};
+void singly_ll::insert(int data){
+    Node* n=new Node();
+    n->data=data;
+    n->next=this->head;
+    this->head=n;
+    this->count++;
+    return;
+}
+void singly_ll::print(){
+    Node* temp=this->head;
+    while(temp!=NULL){
+        cout<<temp->data;
+        cout<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+int main(){
+    singly_ll* list=new singly_ll();
+    list->insert(3);
+    list->insert(6);
+    list->insert(9);
+    list->insert(12);
+    list->print();
+    cout<<list->count;
+    return 0;
+}
