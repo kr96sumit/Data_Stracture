@@ -1,0 +1,78 @@
+// middle of the linked list
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(){
+        data=0;
+        next=NULL;
+    }  
+};
+class linked_List{
+    public:
+    Node* head;
+    int length;
+    linked_List(){
+        head=NULL;
+        length=0;
+    }
+    void push(int data);
+    int Data_At_Index(int index);
+    Node* NodeRef_byIndex(int index);
+    void print();
+};
+Node* linked_List::NodeRef_byIndex(int index){
+    Node* node=this->head;
+    while(--index){
+        node=node->next;
+    }
+    return node;
+}
+int linked_List::Data_At_Index(int index){
+    Node* node=this->NodeRef_byIndex(index);
+    return node->data;
+}
+void linked_List::push(int data){
+    Node* node=new Node();
+    node->data=data;
+    node->next=head;
+    this->head=node;
+    this->length++;
+    return;
+}
+void linked_List::print(){
+    Node* temp=this->head;
+    while(temp!=NULL){
+        cout<<temp->data;
+        cout<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+    return;
+}
+
+
+int main(){
+    linked_List* list=new linked_List();
+    for(int i=1;i<=20;i++){
+    list->push(i);
+    cout<<" ";
+    }
+    if(list->length%2==0){
+        int index=((list->length)/2)+1;
+        cout<<"middle element is   "<<list->Data_At_Index(index);
+        cout<<endl;
+    }
+    else{
+        cout<<"middle element is   "<<list->Data_At_Index((list->length/2)+1);
+        cout<<endl;
+        
+    }
+    list->print();
+   //cout<<"element at index 3 --->"<<list->Data_At_Index(3);
+   cout<<endl;
+    cout<<list->length<<endl;
+    return 0;
+}
