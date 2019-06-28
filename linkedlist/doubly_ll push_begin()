@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+  public:
+  int data;
+  Node* next;
+  Node* prev;
+  Node(){
+      data=0;
+      next=NULL;
+      prev=NULL;
+  }
+};
+class doubly_ll{
+    public:
+    Node* head;
+    void push(int data);
+};
+//insert node at the font of list--
+void doubly_ll::push(int data){
+    Node* node=new Node();
+    node->data=data;
+    node->next=this->head;
+    node->prev=NULL;
+    if(this->head!=NULL)
+    head->prev=node;
+    this->head=node;
+    
+}
+int main(){
+    doubly_ll* list=new doubly_ll();
+    list->push(12);
+    cout<<list->head->data;
+    return 0;
+}
