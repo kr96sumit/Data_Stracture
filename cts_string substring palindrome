@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+string reverse_substring(int i,int j,string str){
+    while(i<=j){
+        char temp=str[i-1];
+        str[i-1]=str[j-1];
+        str[j-1]=temp;
+        i++;
+        j--;
+    }
+    return str;
+}
+string is_palindrome(string str,int k,int l){
+        bool flag=true;
+        while(k<=l){
+            if(str[k-1]!=str[l-1]){ flag=false;break;}
+            k++;
+            l--;
+        }
+        if(flag) return "Yes";
+        else return "No";
+}
+int main() {
+    string str;
+    cin>>str;
+    int q;
+    cin>>q;
+    int i,j,k,l;
+    while(q--){
+        cin>>i>>j>>k>>l;
+        string temp=reverse_substring(i,j,str);
+        cout<<is_palindrome(temp,k,l)<<endl;
+    }
+	return 0;
+}
