@@ -1,0 +1,29 @@
+//string hashcode- use in hashmap, hashtable
+
+//String hashCode() overrides the Object.hashCode()
+
+/*
+How is String hashcode calculated?
+The hashcode value of a String is calculated with the help of a formula:
+
+s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+where:
+
+s[i] represents the ith character of the string
+^ refers to the exponential operand
+n represents the length of the string
+*/
+
+import java.io.*;
+
+class demo{
+    public static void main(String args[]){
+         String str="string";
+         System.out.println(str);
+         
+         int hashcode=str.hashCode();
+         System.out.println(hashcode);
+         
+         System.out.println("sumit gupta".hashCode());
+    }
+}
